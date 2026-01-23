@@ -1,18 +1,19 @@
 package com.project.springboot_api_test.api.model;
 
-import java.util.HashMap;
+
+import java.util.ArrayList;
 
 public class User {
-    private int id;
+    private String id;
     private String email;
     private String name;
     private String phone;
     private String password;
     private String tax_id;
     private String created_at;
-    private HashMap<Integer, Address> addresses;
+    private ArrayList<Address> addresses;
 
-    public User(int id, String email, String name, String phone, String password, String tax_id, String created_at, HashMap<Integer, Address> addresses) {
+    public User(String id, String email, String name, String phone, String password, String tax_id, String created_at, ArrayList<Address> addresses) {
         this.id = id;
         this.email = email;
         this.name = name;
@@ -23,10 +24,13 @@ public class User {
         this.addresses = addresses;
     }
 
-    public int getId() {
+    public User(String string, String mail, String user1) {
+    }
+
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -72,10 +76,10 @@ public class User {
         this.created_at = created_at;
     }
 
-    public HashMap<Integer, Address> getAddresses() {
+    public ArrayList<Address> getAddresses() {
         return addresses;
     }
-    public void setAddresses(HashMap<Integer, Address> addresses) {
+    public void setAddresses(ArrayList<Address> addresses) {
         this.addresses = addresses;
     }
 
