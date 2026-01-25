@@ -43,7 +43,7 @@ public class UserService {
                 "user2",
                 "+1 55 567 890 00",
                 PasswordHelper.encrypt("password2"),
-                "AARR990102XXX",
+                "ABCD000101XYZ",
                 ZonedDateTime.now(MADAGASCAR_TZ).format(DATE_FORMAT),
                 ( new ArrayList<Address>(Arrays.asList(
                         new Address(1, "workaddress", "street No. 1", "UK"),
@@ -58,7 +58,7 @@ public class UserService {
                 "user3",
                 "+1 55 789 012 11",
                 PasswordHelper.encrypt("password3"),
-                "AARR990103XXX",
+                "XYZW991231ABC",
                 ZonedDateTime.now(MADAGASCAR_TZ).format(DATE_FORMAT),
                 ( new ArrayList<Address>(Arrays.asList(
                         new Address(1, "workaddress", "street No. 6", "US"),
@@ -67,5 +67,10 @@ public class UserService {
             )
         );
     }
+
+    private Boolean taxIdExists(String taxId) {
+        return userList.stream().anyMatch(user -> user.getId().equals(taxId));
+    }
+
 
 }
