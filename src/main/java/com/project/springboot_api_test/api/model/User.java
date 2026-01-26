@@ -1,6 +1,8 @@
 package com.project.springboot_api_test.api.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class User {
@@ -8,6 +10,7 @@ public class User {
     private String email;
     private String name;
     private String phone;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
     private String tax_id;
     private String created_at;
@@ -22,9 +25,6 @@ public class User {
         this.tax_id = tax_id;
         this.created_at = created_at;
         this.addresses = addresses;
-    }
-
-    public User(String string, String mail, String user1) {
     }
 
     public String getId() {
@@ -82,6 +82,4 @@ public class User {
     public void setAddresses(ArrayList<Address> addresses) {
         this.addresses = addresses;
     }
-
-
 }
